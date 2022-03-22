@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import ToDoPage from './toDo/toDoPage';
+import NextLessonProjectPage from './nextLessonProject/nextLessonProject';
+import HomePage from './home/homePage';
+import { Route, Routes, NavLink } from 'react-router-dom';
+
 import './App.css';
+
+export default App;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className='menu'>
+          <NavLink
+            className="App-link menu__item"
+            to="./"
+            rel="noopener noreferrer"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className="App-link menu__item"
+            to="./toDo"
+            rel="noopener noreferrer"
+          >
+            toDo
+          </NavLink>
+          <NavLink
+            className="App-link menu__item"
+            to="/nextProject"
+            rel="noopener noreferrer"
+          >
+            another project...
+          </NavLink>
+        </div>
+        <Routes>
+          <Route path='/' element={<HomePage/>}/>
+          <Route path='/todo' element={<ToDoPage />} />
+          <Route path='/nextProject' element={<NextLessonProjectPage />} />
+        </Routes>
       </header>
     </div>
   );
 }
-
-export default App;

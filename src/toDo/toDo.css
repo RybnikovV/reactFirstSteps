@@ -1,0 +1,79 @@
+.to-do{
+    display: flex;
+    justify-content: center;
+}
+
+.to-do__wrapper {
+    width: 400px;
+    border-radius: 4px;
+}
+
+.to-do__item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.to-do__item:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.to-do__item.to-do__item_done {
+    opacity: 0.3;
+}
+.to-do__item:hover.to-do__item_done {
+    background-color: inherit;
+}
+
+.to-do__input {
+    margin-top: 16px;
+    margin-right: 12px;
+    border: 0;
+    border-bottom: 1px solid white;
+    border-radius: 4px;
+    width: 200px;
+    background: none;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.to-do__item-actions {
+    display: flex;
+    width: 40px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.to-do__item-delet {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 4, 0, .3);
+    border-radius: 50%;
+}
+
+.to-do__item-delet:hover {
+    background-color: rgba(255, 4, 0, 1);
+}
+
+.to-do__item-finished {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 190, 0, .3);
+    border-radius: 50%;
+}
+
+.to-do__item-finished:hover {
+    background-color: rgba(255, 190, 0, 1);
+}
+
+.to-do__item-finished.to-do__item-finished_disable {
+    cursor: default;
+}
+
+.to-do__item-delet.to-do__item-delet_disable {
+    cursor: default;
+}
