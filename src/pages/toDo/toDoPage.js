@@ -1,5 +1,5 @@
 import React from 'react';
-import toDoItemsData from '../fakeData/toDoData';
+import toDoItemsData from '../../fakeData/toDoData';
 import ToDoItem from './toDoItem/toDoItem';
 import ToDoInput from './toDoInput/toDoInput';
 
