@@ -1,31 +1,32 @@
-import { createStore } from 'redux';
-import { connect } from 'react-redux';
-import { ADD_NEW_TASK } from '../redux/types';
+import React from 'react';
+import MyButton from '../../../components/button/btn';
 
 export default ToDoInput;
+ 
+function ToDoInput({addNewTask}) {
+    const [inputValue, setInputValue] = React.useState('');
 
-function ToDoInput() {
-    const initialState = {
-        toDoInputText: ''
-    };
-
-    const actionAddNewTask = {
-        type: ADD_NEW_TASK,
-        payload: null
+    const createNewTask = () => {
+        console.log('createNEwTask call');
+        if (inputValue.length !== 0) {
+            addNewTask({
+                id: new Date(),
+                description: inputValue,
+                status: 'unresolved'
+            });
+            setInputValue('');
+        }
     }
-
-    const rootReducer = (state = initialState, action) => {
-        return state;
-    };
-
-    const store = createStore(rootReducer);
-
-    console.log(store.getState());
 
     return (
         <div>
-            <input className="to-do__input" type='text' placeholder="add task.."></input>
-            <button className='btn btn_success'>add</button>
+            <input className="to-do__input" 
+                type='text' 
+                placeholder="add task by interior function"
+                value={inputValue}
+                onChange={event => setInputValue(event.target.value)}/>
+            <button className='btn btn_success' onClick={createNewTask}>add</button>
+            <MyButton>add</MyButton>
         </div>
     )
 }

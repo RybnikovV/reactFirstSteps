@@ -8,24 +8,28 @@ import './toDo.css';
 export default ToDoPage;
 
 function ToDoPage() {
-    const [items, setItems] = React.useState(toDoItemsData);
+    const [toDoitems, setToDoItems] = React.useState(toDoItemsData);
 
     const deletItem = (key) => {
-        setItems([...items.filter(item => item.id !== key)])
+        setToDoItems(toDoitems.filter(item => item.id !== key))
     };
 
-    const finishTask = (key) => {
-        const changedItemsData = items.map(item => {
+    const resolveTask = (key) => {
+        const changedItemsData = toDoitems.map(item => {
             if(item.id === key){
                 item.status = 'resolved'
             }
             return item
         })
 
-        setItems(changedItemsData)
+        setToDoItems(changedItemsData)
     };
 
-    const viewItems = items.map(item => {
+    const addNewTask = (toDoItemData) => {
+        setToDoItems([...toDoitems, toDoItemData]);
+    };
+
+    const viewItems = toDoitems.map(item => {
         return (
             <ToDoItem
                 status={item.status}
@@ -33,14 +37,15 @@ function ToDoPage() {
                 id={item.id}
                 key={item.id}
                 deleteItem={deletItem}
-                finishTask={finishTask}/>
+                resolveTask={resolveTask}/>
         )
     });
+
     return (
         <div className='to-do'>
             <div className='to-do__wrapper'>
                 {viewItems}
-                <ToDoInput />
+                <ToDoInput addNewTask={addNewTask}/>
             </div>
         </div>
     )
