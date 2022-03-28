@@ -1,7 +1,7 @@
-import ToDoPage from './toDo/toDoPage';
-import NextLessonProjectPage from './nextLessonProject/nextLessonProject';
-import HomePage from './home/homePage';
 import { Route, Routes, NavLink } from 'react-router-dom';
+import ToDoPage from './pages/toDo/toDoPage';
+import NextLessonProjectPage from './pages/nextLessonProject/nextLessonProject';
+import HomePage from './pages/home/homePage';
 
 import './App.css';
 

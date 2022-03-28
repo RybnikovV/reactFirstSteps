@@ -22,7 +22,7 @@ function ToDoItem(props) {
                     {props.description}
                 </div>
                 <div className='to-do__item-actions'>
-                    <div className='to-do__item-finished' onClick={() => props.finishTask(props.id)}></div>
+                    <div className='to-do__item-finished' onClick={() => props.resolveTask(props.id)}></div>
                     <div className='to-do__item-delet' onClick={() => props.deleteItem(props.id)}></div>
                 </div>
             </div>
