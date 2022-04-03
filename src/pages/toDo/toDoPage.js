@@ -31,11 +31,11 @@ function ToDoPage() {
     };
     //Конец блока управления
 
-    // const searchedToDoItems = React.useMemo(()=>{
+    const searchedToDoItems = React.useMemo(() => {
+        return toDoitems.filter(item => item.description.includes(searchValue))
+    }, [toDoitems, searchValue])
 
-    // }, [toDoitems, searchValue])
-
-    const viewItems  = [...toDoitems].sort(item => item.status === 'unresolved' ? -1 : 1)
+    const viewItems  = [...searchedToDoItems].sort(item => item.status === 'unresolved' ? -1 : 1)
         .map(item => {
             console.log('lel')
             return (
