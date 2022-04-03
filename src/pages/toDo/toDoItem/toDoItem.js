@@ -11,7 +11,7 @@ function ToDoItem(props) {
                 </div>
                 <div className='to-do__item-actions'>
                     <div className='to-do__item-finished to-do__item-finished_disable'></div>
-                    <div className='to-do__item-delet to-do__item-delet_disable'></div>
+                    <div className='to-do__item-delet' onClick={() => props.deleteItem(props.id)}></div>
                 </div>
             </div>
         )

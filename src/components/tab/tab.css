@@ -1,0 +1,20 @@
+.tab__header {
+    display: flex;
+}
+
+.tab__header-item {
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.tab__header-item_active {
+    border-bottom: 1px solid #61DAFB;
+}
+
+.tab__header-item:hover {
+    background-color: rgba(255,255,255, .1);
+}
+
+.tab__item-title {
+    background-color: transparent;
+}

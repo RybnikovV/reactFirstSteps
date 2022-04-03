@@ -10,7 +10,7 @@
 
 .to-do__item {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 4px 8px;
     border-radius: 4px;
@@ -33,7 +33,6 @@
     border: 0;
     border-bottom: 1px solid white;
     border-radius: 4px;
-    width: 200px;
     background: none;
     font-size: calc(10px + 2vmin);
     color: white;
