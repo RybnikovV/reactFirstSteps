@@ -7,8 +7,7 @@ function ToDoInput({addNewTask}) {
     const [inputValue, setInputValue] = React.useState('');
 
     const createNewTask = () => {
-        console.log('createNEwTask call');
-        if (inputValue.length !== 0) {
+        if (inputValue.trim().length) {
             addNewTask({
                 id: new Date(),
                 description: inputValue,
@@ -22,11 +21,12 @@ function ToDoInput({addNewTask}) {
         <div>
             <input className="to-do__input" 
                 type='text' 
-                placeholder="add task by interior function"
+                placeholder="add task"
                 value={inputValue}
                 onChange={event => setInputValue(event.target.value)}/>
             <button className='btn btn_success' onClick={createNewTask}>add</button>
-            <MyButton>add</MyButton>
+            {/* Пример создания собстевнной кнопки
+            <MyButton>add</MyButton> */}
         </div>
     )
 }
