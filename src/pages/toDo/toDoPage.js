@@ -1,16 +1,24 @@
-import React from 'react';
-import toDoItemsData from '../../fakeData/toDoData';
+import React, { useEffect } from 'react';
 import ToDoItem from './toDoItem/toDoItem';
 import ToDoInput from './toDoInput/toDoInput';
 import Tab from '../../components/tab/tab';
+import toDoService from '../../API/toDoService';
 
 import './toDo.css';
 
 export default ToDoPage;
 
 function ToDoPage() {
-    const [toDoitems, setToDoItems] = React.useState(toDoItemsData);
+    const [toDoitems, setToDoItems] = React.useState([]);
     const [searchValue, setSerchValue] = React.useState('');
+
+    useEffect(() => {
+        fetchToDoItems();
+    }, [])
+
+    async function fetchToDoItems() {
+        setToDoItems(await toDoService.getAll());
+    };
 
     //Блок управление
     const deletItem = (key) => {
@@ -27,27 +35,9 @@ function ToDoPage() {
         setToDoItems(changedItemsData)
     };
     const addNewTask = (toDoItemData) => {
-        setToDoItems([...toDoitems, toDoItemData]);
+        setToDoItems([toDoItemData, ...toDoitems,]);
     };
     //Конец блока управления
-
-    const searchedToDoItems = React.useMemo(() => {
-        return toDoitems.filter(item => item.description.includes(searchValue))
-    }, [toDoitems, searchValue])
-
-    const viewItems  = [...searchedToDoItems].sort(item => item.status === 'unresolved' ? -1 : 1)
-        .map(item => {
-            console.log('lel')
-            return (
-                <ToDoItem
-                    status={item.status}
-                    description={item.description}
-                    id={item.id}
-                    key={item.id}
-                    deleteItem={deletItem}
-                    resolveTask={resolveTask}/>
-            )
-    });
 
     const tabContent = [
         {
@@ -63,10 +53,26 @@ function ToDoPage() {
         }
     ];
 
+    const searchedToDoItems = React.useMemo(() => {
+        return toDoitems.filter(item => item.title.toLowerCase().includes(searchValue))
+    }, [toDoitems, searchValue]);
+
+    const viewItems  = [...searchedToDoItems].map(item => {
+            return (
+                <ToDoItem
+                    completed={item.completed}
+                    title={item.title}
+                    id={item.id}
+                    key={item.id}
+                    deleteItem={deletItem}
+                    resolveTask={resolveTask}/>
+                )
+        });
+
     return (
         <div className='to-do'>
             <div className='to-do__wrapper'>
-                <Tab tabsContent={tabContent}/>
+                <Tab tabsContent={tabContent} className="margin-b-2"/>
                 {
                     viewItems.length
                     ? viewItems
