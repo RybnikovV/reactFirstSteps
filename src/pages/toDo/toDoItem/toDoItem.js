@@ -3,11 +3,11 @@ import React from 'react';
 export default ToDoItem;
 
 function ToDoItem(props) {
-    if (props.status === 'resolved') {
+    if (props.completed) {
         return (
             <div className='to-do__item to-do__item_done' key={props.id}>
                 <div className='to-do__item-text'>
-                    {props.description}
+                    {props.title}
                 </div>
                 <div className='to-do__item-actions'>
                     <div className='to-do__item-finished to-do__item-finished_disable'></div>
@@ -19,7 +19,7 @@ function ToDoItem(props) {
         return (
             <div className='to-do__item'>
                 <div className='to-do__item-text'>
-                    {props.description}
+                    {props.title}
                 </div>
                 <div className='to-do__item-actions'>
                     <div className='to-do__item-finished' onClick={() => props.resolveTask(props.id)}></div>

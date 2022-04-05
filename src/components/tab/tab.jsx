@@ -6,7 +6,7 @@ import './tab.css';
 
 export default Tab;
 
-function Tab({tabsContent}) {
+function Tab({tabsContent, ...props}) {
     const [activeTab, setActiveTab] = React.useState(0);
 
     const changeActiveTab = index => {
@@ -28,8 +28,12 @@ function Tab({tabsContent}) {
         }
     });
 
+    const getClass = () => {
+        return `tab ${props.className}`
+    };
+
     return(
-        <div className='tab'>
+        <div className={ getClass() }>
             <div className='tab__header'>
                 {viewTabItem.map((viewTabItem)=>viewTabItem.tabHeader)}
             </div>

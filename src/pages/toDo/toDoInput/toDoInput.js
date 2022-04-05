@@ -10,8 +10,8 @@ function ToDoInput({addNewTask}) {
         if (inputValue.trim().length) {
             addNewTask({
                 id: new Date(),
-                description: inputValue,
-                status: 'unresolved'
+                title: inputValue,
+                completed: false
             });
             setInputValue('');
         }
