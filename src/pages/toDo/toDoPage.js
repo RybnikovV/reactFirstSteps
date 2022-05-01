@@ -27,7 +27,7 @@ function ToDoPage() {
     const resolveTask = (key) => {
         const changedItemsData = toDoitems.map(item => {
             if (item.id === key) {
-                item.status = 'resolved'
+                item.completed = true
             }
             return item
         })
@@ -35,7 +35,7 @@ function ToDoPage() {
         setToDoItems(changedItemsData)
     };
     const addNewTask = (toDoItemData) => {
-        setToDoItems([toDoItemData, ...toDoitems,]);
+        setToDoItems([toDoItemData, ...toDoitems]);
     };
     //Конец блока управления
 

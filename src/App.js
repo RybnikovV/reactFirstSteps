@@ -36,8 +36,8 @@ function App() {
         </div>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
-          <Route path='/todo' element={<ToDoPage />} />
-          <Route path='/nextProject' element={<NextLessonProjectPage />} />
+          <Route path='/todo' element={<ToDoPage/>} />
+          <Route path='/nextProject' element={<NextLessonProjectPage/>} />
         </Routes>
       </header>
     </div>
