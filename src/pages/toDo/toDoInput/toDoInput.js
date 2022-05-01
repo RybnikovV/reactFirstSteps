@@ -18,8 +18,8 @@ function ToDoInput({addNewTask}) {
     }
 
     return (
-        <div>
-            <input className="to-do__input" 
+        <div className='d-flex'>
+            <input className='to-do__input' 
                 type='text' 
                 placeholder="add task"
                 value={inputValue}

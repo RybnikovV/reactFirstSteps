@@ -3,7 +3,7 @@ import ToDoPage from './pages/toDo/toDoPage';
 import NextLessonProjectPage from './pages/nextLessonProject/nextLessonProject';
 import HomePage from './pages/home/homePage';
 
-import './App.css';
+import './App.scss';
 
 export default App;
 
@@ -36,8 +36,8 @@ function App() {
         </div>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
-          <Route path='/todo' element={<ToDoPage/>} />
-          <Route path='/nextProject' element={<NextLessonProjectPage/>} />
+          <Route path='/todo' element={<ToDoPage/>}/>
+          <Route path='/nextProject' element={<NextLessonProjectPage/>}/>
         </Routes>
       </header>
     </div>

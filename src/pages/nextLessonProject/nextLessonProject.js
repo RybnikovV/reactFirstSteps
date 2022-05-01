@@ -2,6 +2,9 @@ export default NextLessonProjectPage;
 
 function NextLessonProjectPage() {
     return (
-        <div>Cooming soon...</div>
+        <>
+            <div>Согласование</div>
+            <div>Отрисовка(render)</div>
+        </>
     )
 }

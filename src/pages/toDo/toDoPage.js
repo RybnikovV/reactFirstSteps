@@ -58,16 +58,16 @@ function ToDoPage() {
     }, [toDoitems, searchValue]);
 
     const viewItems  = [...searchedToDoItems].map(item => {
-            return (
-                <ToDoItem
-                    completed={item.completed}
-                    title={item.title}
-                    id={item.id}
-                    key={item.id}
-                    deleteItem={deletItem}
-                    resolveTask={resolveTask}/>
-                )
-        });
+        return (
+            <ToDoItem
+                completed={item.completed}
+                title={item.title}
+                id={item.id}
+                key={item.id}
+                deleteItem={deletItem}
+                resolveTask={resolveTask}/>
+        )
+    });
 
     return (
         <div className='to-do'>
@@ -81,4 +81,4 @@ function ToDoPage() {
             </div>
         </div>
     )
-}
+};
