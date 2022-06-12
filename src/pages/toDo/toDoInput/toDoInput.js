@@ -26,7 +26,7 @@ function ToDoInput({addNewTask}) {
                 onChange={event => setInputValue(event.target.value)}/>
             <button className='btn btn_success' onClick={createNewTask}>add</button>
             {/* Пример создания собстевнной кнопки
-            <MyButton>add</MyButton> */}
+            <MyButton className="red">add</MyButton> */}
         </div>
     )
 }
