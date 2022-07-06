@@ -16,3 +16,19 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
+
+
+//Согласование reconciliation
+//Отрисовка render
+
+//изменение состояния с помощью хука useState(startPosition,setStartPosition)
+// useRef()
+
+//let cash = useMemo(callback, deps[])
+//useEffect(callback, deps[]) - если callBack возращает функцию, она будет выполнена в момент удаления компонента
+
+
+//Жизменный цикл компонента
+// mount - подгрузка данных, повесить слушатели события
+// update - 
+// unmount - отписываемся, 

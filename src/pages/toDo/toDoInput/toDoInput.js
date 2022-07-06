@@ -18,15 +18,15 @@ function ToDoInput({addNewTask}) {
     }
 
     return (
-        <div>
-            <input className="to-do__input" 
+        <div className='d-flex'>
+            <input className='to-do__input' 
                 type='text' 
                 placeholder="add task"
                 value={inputValue}
                 onChange={event => setInputValue(event.target.value)}/>
             <button className='btn btn_success' onClick={createNewTask}>add</button>
             {/* Пример создания собстевнной кнопки
-            <MyButton>add</MyButton> */}
+            <MyButton className="red">add</MyButton> */}
         </div>
     )
 }

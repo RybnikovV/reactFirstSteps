@@ -22,8 +22,9 @@ function ToDoPage() {
 
     //Блок управление
     const deletItem = (key) => {
-        setToDoItems(toDoitems.filter(item => item.id !== key))
+        setToDoItems(toDoitems.filter(item => item.id !== key));
     };
+
     const resolveTask = (key) => {
         const changedItemsData = toDoitems.map(item => {
             if (item.id === key) {
@@ -34,18 +35,19 @@ function ToDoPage() {
 
         setToDoItems(changedItemsData)
     };
+
     const addNewTask = (toDoItemData) => {
         setToDoItems([toDoItemData, ...toDoitems]);
     };
     //Конец блока управления
-
+        
     const tabContent = [
         {
             title: 'add task',
-            content: <ToDoInput addNewTask={addNewTask}/>
+            content: <ToDoInput addNewTask={addNewTask}/>,
         }, {
             title: 'search element',
-            content: <input  className="to-do__input" 
+            content: <input className="to-do__input" 
                         placeholder='help to find task'
                         type='text'
                         value={searchValue}
@@ -58,16 +60,16 @@ function ToDoPage() {
     }, [toDoitems, searchValue]);
 
     const viewItems  = [...searchedToDoItems].map(item => {
-            return (
-                <ToDoItem
-                    completed={item.completed}
-                    title={item.title}
-                    id={item.id}
-                    key={item.id}
-                    deleteItem={deletItem}
-                    resolveTask={resolveTask}/>
-                )
-        });
+        return (
+            <ToDoItem
+                completed={item.completed}
+                title={item.title}
+                id={item.id}
+                key={item.id}
+                deleteItem={deletItem}
+                resolveTask={resolveTask}/>
+        )
+    });
 
     return (
         <div className='to-do'>
@@ -81,4 +83,4 @@ function ToDoPage() {
             </div>
         </div>
     )
-}
+};

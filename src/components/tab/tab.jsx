@@ -16,13 +16,13 @@ function Tab({tabsContent, ...props}) {
     const viewTabItem = tabsContent.map((tabItem, index) => {
         return {
             tabHeader: <TabHeader index={index} changeActiveTab={changeActiveTab}
-                                    key={tabItem.title+'Header'}
-                                    selected={index===activeTab ? true : false}>
+                            key={tabItem.title+'Header'}
+                            selected={index===activeTab ? true : false}>
                     {tabItem.title}
                 </TabHeader>,
             tabContent: <TabContent index={index}
-                                    key={tabItem.title+'Content'}
-                                    selected={index===activeTab ? true : false}>
+                            key={tabItem.title+'Content'}
+                            selected={index===activeTab ? true : false}>
                     {tabItem.content}
                 </TabContent>
         }

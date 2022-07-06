@@ -1,5 +1,13 @@
+@import url(./styles/index.scss);
+
 .App {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
   text-align: center;
+  color: white;
 }
 
 .App-logo {
@@ -14,8 +22,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,35 +29,9 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-main {
+  overflow: auto;
 }
-
-.menu {
-  margin: 16px;
-}
-
-.menu__item {
-  margin: 4px 12px;
-}
-
-.menu__item.active {
-  color: aliceblue;
-}
-
-.btn {
-  padding: 4px 12px;
-  border: 0;
-  border-radius: 4px;
-  font-size: calc(10px + 2vmin);
-  cursor: pointer;
-}
-
-.btn_success {
-  background-color: #25AF26; 
-  color: white;
-}
-
 
 @keyframes App-logo-spin {
   from {
