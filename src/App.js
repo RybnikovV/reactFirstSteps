@@ -1,17 +1,17 @@
-import { getRoutes, getNav, routes } from './routes';
-
+import { getRoutes, routes } from './routes';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/layout/Layout';
 
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div className='menu'>
-          {getNav(routes)}
-        </div>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
           {getRoutes(routes)}
-      </header>
+        </Route>
+      </Routes>
     </div>
   );
 };

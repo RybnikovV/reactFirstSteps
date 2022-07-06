@@ -1,0 +1,15 @@
+.link, a {
+  color: white;
+}
+
+.link:hover, a:hover {
+  text-decoration: none;
+}
+
+.link__short180 {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 180px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
