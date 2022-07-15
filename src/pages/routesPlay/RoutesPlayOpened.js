@@ -23,7 +23,7 @@ function RoutesPlayOpened() {
     <>
       <h1>{ post.id }-{ post.title }</h1>
       <p>{ post.body }</p>
-      <MyButton onClick={() => {navigate(-1)}}>Go back</MyButton>
+      <MyButton onClick={() => navigate(-1)}>Go back</MyButton>
     </>
   )
 }
